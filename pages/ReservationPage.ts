@@ -1,4 +1,5 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { expect } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 import { GuestDetails } from '../data/Guests';
 
 const TODAY_CLASS = 'rbc-today';

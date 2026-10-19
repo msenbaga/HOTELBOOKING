@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 import { RoomCard } from '../components/RoomCard';
 import { isoToDmy } from '../utils/Dates';
 
