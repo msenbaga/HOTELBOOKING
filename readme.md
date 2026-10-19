@@ -23,7 +23,7 @@ An end-to-end (E2E) testing framework built with [Playwright](https://playwright
 ├── pages/               # Page Object Models (POM)
 │   ├── HomePage.ts      # Page actions for the main homepage
 │   └── ReservationPage.ts # Actions for room calendar & booking form
-├── specs/               # Test suites
+├── tests/               # Test suites
 │   └── Booking.spec.ts  # E2E room search & booking validation tests
 └── utils/               # Utility helper functions
     └── Dates.ts         # Date formatting & calculation helpers
@@ -42,8 +42,8 @@ An end-to-end (E2E) testing framework built with [Playwright](https://playwright
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/msenbaga/HOTELBOOKING.git
+   cd HOTELBOOKING
    ```
 
 2. **Install dependencies:**
@@ -89,7 +89,7 @@ An end-to-end (E2E) testing framework built with [Playwright](https://playwright
 
 ## 📡 API Mocking Overview
 
-This framework utilizes an `ApiMock` fixture (`data/Apimock.ts`) to intercept network traffic using Playwright's `page.route()`. 
+ApiMock is installed by the api fixture. A test gets the mock by asking for api, and it is installed before the test body runs.
 
 ### Key Mocked Endpoints
 
@@ -109,7 +109,7 @@ Any API call matching `**/api/**` that does not have an explicit rule in `ApiMoc
 Upon test teardown, a console warning will display any unmocked API endpoints detected during execution:
 
 ```
-API calls that were NOT mocked: [ 'GET /branding', 'GET /report/room/901' ]
+API calls that were NOT mocked: [ 'GET /example' ]
 ```
 
 ---
