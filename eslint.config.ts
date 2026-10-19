@@ -1,17 +1,19 @@
-import js from "@eslint/js";
+import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
-  js.configs.recommended,
+export default defineConfig([
   {
-    files: ["**/*.ts"],
+    files: ['**/*.{js,mjs,cjs,ts}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+    ],
     languageOptions: {
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
+      globals: {
+        ...globals.node,
       },
     },
-    rules: {
-      // You can add custom TypeScript/JS lint rules here if needed
-    },
   },
-];
+]);

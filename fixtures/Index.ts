@@ -28,6 +28,7 @@ export const test = base.extend<Fixtures>({
   },
 
   // Expected dates for a 2 night stay starting today
+  // eslint-disable-next-line no-empty-pattern
   stay: async ({}, use) => {
     const today = new Date();
     await use({ checkin: iso(today), checkout: iso(addDays(today, 2)), nights: 2 });
